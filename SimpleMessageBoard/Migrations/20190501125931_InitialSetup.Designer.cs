@@ -9,7 +9,7 @@ using SimpleMessageBoard.DAL;
 namespace SimpleMessageBoard.Migrations
 {
     [DbContext(typeof(MessageBoardDbContext))]
-    [Migration("20190430222920_InitialSetup")]
+    [Migration("20190501125931_InitialSetup")]
     partial class InitialSetup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

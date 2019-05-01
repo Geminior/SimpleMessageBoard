@@ -33,7 +33,7 @@
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, userId)
+                    new Claim(ClaimTypes.NameIdentifier, userId)
                 }),
                 Expires = _cfg.TokenDuration.HasValue ? DateTime.Now.Add(_cfg.TokenDuration.Value) : default(DateTime?),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(_cfg.SecretBytes), SecurityAlgorithms.HmacSha256Signature)

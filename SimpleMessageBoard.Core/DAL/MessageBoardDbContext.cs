@@ -20,6 +20,8 @@
             {
                 ent.HasIndex(u => new { u.UserName })
                 .IsUnique();
+
+                ent.Property(u => u.Password);
             });
 
             modelBuilder.Entity<BoardMessage>(ent =>

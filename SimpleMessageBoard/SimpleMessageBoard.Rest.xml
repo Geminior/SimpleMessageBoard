@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleMessageBoard.Rest</name>
+    </assembly>
+    <members>
+        <member name="M:SimpleMessageBoard.Controllers.AuthController.Post(SimpleMessageBoard.Controllers.AuthController.Credentials)">
+             <summary>  Authenticates a user and returns an authentication token for use in further requests.</summary>
+             <remarks>
+             Sample:
+            
+                 POST /Auth
+                 {
+                    "username": "yourusername",
+                    "password": "yourpassword"
+                 }
+            
+             </remarks>
+             <param name="creds">The credentials to authenticate.</param>
+             <returns>A bearer token which can be used to authenticate requests to other services.</returns>
+             <response code="200">Authentication succeeded and a token was returned.</response>
+             <response code="401">If authentication failed for whatever reason.</response>
+        </member>
+    </members>
+</doc>
