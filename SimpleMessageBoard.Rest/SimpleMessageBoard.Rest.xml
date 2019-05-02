@@ -21,5 +21,81 @@
              <response code="200">Authentication succeeded and a token was returned.</response>
              <response code="401">If authentication failed for whatever reason.</response>
         </member>
+        <member name="M:SimpleMessageBoard.Controllers.MessageBoardController.GetAll">
+             <summary>Gets all messages.</summary>
+             <remarks>
+             Sample:
+            
+                 GET /MessageBoard
+             </remarks>
+             <returns>An array of messages</returns>
+             <response code="200">List of messages retrieved.</response>
+        </member>
+        <member name="M:SimpleMessageBoard.Controllers.MessageBoardController.Get(System.Int32)">
+             <summary>Gets a specific message by Id.</summary>
+             <remarks>
+             Sample:
+            
+                 GET /MessageBoard/2
+             </remarks>
+             <param name="id">The message Id.</param>
+             <returns>The message if found.</returns>
+             <response code="200">The message was found and returned.</response>
+             <response code="404">The message was not found.</response>
+        </member>
+        <member name="M:SimpleMessageBoard.Controllers.MessageBoardController.Create(SimpleMessageBoard.DTOs.MessageBoardEntry)">
+             <summary>
+             Creates a new message.
+             </summary>
+             <remarks>
+             Sample:
+            
+                 POST /MessageBoard
+                 {
+                    "message": "some message"
+                 }
+            
+             </remarks>
+             <param name="msg">The message to create.</param>
+             <returns>The message if created.</returns>
+             <response code="201">The message was created.</response>
+             <response code="400">The posting user is not a valid author.</response>
+             <response code="401">The posting user is not authorized.</response>
+        </member>
+        <member name="M:SimpleMessageBoard.Controllers.MessageBoardController.Update(System.Int32,SimpleMessageBoard.DTOs.MessageBoardEntry)">
+             <summary>
+             Updates the specified message.
+             </summary>
+             <remarks>
+             Sample:
+            
+                 PUT /MessageBoard/1
+                 {
+                    "id": 1,
+                    "message": "some message"
+                 }
+            
+             </remarks>
+             <param name="id">The message Id.</param>
+             <param name="entry">The edited message.</param>
+             <response code="204">The message was updated.</response>
+             <response code="400">Message identity mismatch.</response>
+             <response code="401">The posting user is not authorized.</response>
+             <response code="404">The message was not found.</response>
+        </member>
+        <member name="M:SimpleMessageBoard.Controllers.MessageBoardController.Delete(System.Int32)">
+             <summary>
+             Deletes the specified message.
+             </summary>
+             <remarks>
+             Sample:
+            
+                 DELETE /MessageBoard/2
+            
+             </remarks>
+             <param name="id">The message Id.</param>
+             <response code="204">The message was deleted.</response>
+             <response code="404">The message was not found.</response>
+        </member>
     </members>
 </doc>
