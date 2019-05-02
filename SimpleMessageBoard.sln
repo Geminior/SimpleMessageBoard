@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMessageBoard.Rest", "SimpleMessageBoard\SimpleMessageBoard.Rest.csproj", "{301D6E80-411A-4803-9E9F-9F2B3C44FC9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMessageBoard.Rest", "SimpleMessageBoard.Rest\SimpleMessageBoard.Rest.csproj", "{301D6E80-411A-4803-9E9F-9F2B3C44FC9F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMessageBoard.Core", "SimpleMessageBoard.Core\SimpleMessageBoard.Core.csproj", "{06B0FF38-9EA2-4282-8853-C4519B77FB73}"
 EndProject

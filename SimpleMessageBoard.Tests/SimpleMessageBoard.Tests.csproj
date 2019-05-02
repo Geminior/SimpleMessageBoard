@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimpleMessageBoard.Core\SimpleMessageBoard.Core.csproj" />
-    <ProjectReference Include="..\SimpleMessageBoard\SimpleMessageBoard.Rest.csproj" />
+    <ProjectReference Include="..\SimpleMessageBoard.Rest\SimpleMessageBoard.Rest.csproj" />
   </ItemGroup>
 
   <ItemGroup>
