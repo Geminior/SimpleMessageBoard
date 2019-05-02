@@ -95,6 +95,7 @@
              </remarks>
              <param name="id">The message Id.</param>
              <response code="204">The message was deleted.</response>
+             <response code="401">The posting user is not authorized.</response>
              <response code="404">The message was not found.</response>
         </member>
     </members>

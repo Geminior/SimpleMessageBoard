@@ -18,8 +18,9 @@
             //Setup config options
             services.ConfigureSection<TokensConfig>(configuration);
 
-            services.AddDbContext<MessageBoardDbContext>(opt => opt.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=SimpleMessageBoardDb;Trusted_Connection=True;MultipleActiveResultSets=true", b => b.MigrationsAssembly("SimpleMessageBoard.Rest")));
-            //options => options.UseInMemoryDatabase("MessageBoardDb"));
+            //Setup data store
+            services.AddDbContext<MessageBoardDbContext>(options => options.UseInMemoryDatabase("MessageBoardDb"));
+
             //Configure authentication
             services.AddSingleton<IPasswordHasher<BoardUser>, PasswordHasher<BoardUser>>();
 

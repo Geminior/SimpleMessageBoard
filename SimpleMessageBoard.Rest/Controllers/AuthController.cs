@@ -10,9 +10,9 @@
     [ApiController]
     public class AuthController : ControllerBase
     {
-        IUserService _authService;
+        IAuthenticationService _authService;
 
-        public AuthController(IUserService authService)
+        public AuthController(IAuthenticationService authService)
         {
             _authService = authService;
         }

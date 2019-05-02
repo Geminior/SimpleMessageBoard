@@ -3,7 +3,7 @@
     using SimpleMessageBoard.DTOs;
     using System.Threading.Tasks;
 
-    public interface IUserService
+    public interface IAuthenticationService
     {
         Task<AuthToken> AuthenticateForToken(string userName, string password);
     }
