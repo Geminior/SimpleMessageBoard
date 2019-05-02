@@ -43,7 +43,7 @@
 
             //Configure app services
             services.AddScoped<ITokenIssuer, TokenIssuer>();
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IMessageBoardService, MessageBoardService>();
 
             return services;

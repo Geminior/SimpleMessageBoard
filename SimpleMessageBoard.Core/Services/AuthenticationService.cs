@@ -9,14 +9,14 @@
     using System;
     using System.Threading.Tasks;
 
-    public sealed class UserService : IUserService
+    public sealed class AuthenticationService : IAuthenticationService
     {
         private ITokenIssuer _tokenIssuer;
         private IPasswordHasher<BoardUser> _passHasher;
         private MessageBoardDbContext _ctx;
         private ILogger _logger;
 
-        public UserService(MessageBoardDbContext ctx, IPasswordHasher<BoardUser> passHasher, ITokenIssuer tokenIssuer, ILogger<UserService> logger)
+        public AuthenticationService(MessageBoardDbContext ctx, IPasswordHasher<BoardUser> passHasher, ITokenIssuer tokenIssuer, ILogger<AuthenticationService> logger)
         {
             _ctx = ctx ?? throw new ArgumentNullException(nameof(ctx));
             _passHasher = passHasher ?? throw new ArgumentNullException(nameof(passHasher));
