@@ -1,6 +1,8 @@
 # SimpleMessageBoard
 Implementation of a simple message board to serve as the base for a tech interview.
 
+Make sure the [.Net Core 2.2](https://dotnet.microsoft.com/download) SDK is installed.
+
 To run, either:  
 Open the solution in Visual Studio and run it
 
