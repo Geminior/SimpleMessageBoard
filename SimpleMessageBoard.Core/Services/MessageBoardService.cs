@@ -97,7 +97,7 @@
             var msg = await _ctx.Messages.FindAsync(editedMessage.Id);
             if (msg == null || msg.AuthorId != requesterId)
             {
-                _logger.LogInformation("[E] Update of message with Id: {Id} for author {AuthorId} rejected.", msg.Id, requesterId);
+                _logger.LogInformation("[E] Update of message with Id: {Id} for author {AuthorId} rejected.", editedMessage.Id, requesterId);
                 return false;
             }
 
