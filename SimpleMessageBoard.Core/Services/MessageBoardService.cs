@@ -59,6 +59,12 @@
 
         public async Task<MessageBoardEntry> CreateMessage(MessageBoardEntry message, int requesterId)
         {
+            if (message == null)
+            {
+                _logger.LogWarning("Message is null trying to create new message for author: {AuthorId}.", requesterId);
+                return null;
+            }
+
             _logger.LogInformation("[S] Creating new message for author: {AuthorId}.", requesterId);
 
             string authorName;
@@ -92,6 +98,12 @@
 
         public async Task<bool> UpdateMessage(MessageBoardEntry editedMessage, int requesterId)
         {
+            if (editedMessage == null)
+            {
+                _logger.LogWarning("[E] Message is null.");
+                return false;
+            }
+
             _logger.LogInformation("[S] Updating message with Id: {Id}.", editedMessage.Id);
 
             var msg = await _ctx.Messages.FindAsync(editedMessage.Id);

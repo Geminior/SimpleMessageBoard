@@ -172,6 +172,33 @@ namespace SimpleMessageBoard.Tests
         }
 
         [Fact]
+        public async Task Creating_a_null_message_should_fail_gracefully()
+        {
+            //Arrange
+            int preMessageCount;
+            int postMessageCount;
+
+            //Act
+            MessageBoardEntry result;
+            using (var ctx = _dbFake.GetContext())
+            {
+                var msgService = new MessageBoardService(ctx, _logger);
+
+                preMessageCount = ctx.Messages.Count();
+                result = await msgService.CreateMessage(null, 1);
+            }
+
+            using (var ctx = _dbFake.GetContext())
+            {
+                postMessageCount = ctx.Messages.Count();
+            }
+
+            //Assert
+            Assert.Null(result);
+            Assert.Equal(preMessageCount, postMessageCount);
+        }
+
+        [Fact]
         public async Task Updating_an_invalid_message_should_fail()
         {
             //Arrange
@@ -189,6 +216,22 @@ namespace SimpleMessageBoard.Tests
                 var msgService = new MessageBoardService(ctx, _logger);
                 
                 result = await msgService.UpdateMessage(editedMsg, author.Id);
+            }
+
+            //Assert
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task Updating_a_null_message_should_fail_gracefully()
+        {
+            //Act
+            bool result;
+            using (var ctx = _dbFake.GetContext())
+            {
+                var msgService = new MessageBoardService(ctx, _logger);
+
+                result = await msgService.UpdateMessage(null, 1);
             }
 
             //Assert
